@@ -1,0 +1,20 @@
+<!-- templates/admin.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>題庫上傳</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>📤 題庫上傳（管理者）</h2>
+    <form method="POST" action="/admin" enctype="multipart/form-data">
+      <input type="file" name="file" accept=".xlsx" required>
+      <button type="submit">上傳題庫</button>
+    </form>
+    <p>⚠️ 請上傳格式正確的 Excel 檔案（含題號、題目、選項1~4、正確答案）。</p>
+  </div>
+</body>
+</html>

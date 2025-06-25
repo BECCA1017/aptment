@@ -1,0 +1,37 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>測驗結果</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>🎉 測驗完成！</h2>
+    <p>您的暱稱：<strong>{{ nickname }}</strong></p>
+    <p>總得分：<strong>{{ score }}</strong> 分</p>
+    <p>作答時間：<strong>{{ time }} 秒</strong></p>
+
+    <h3>📊 排行榜（前 50 名）</h3>
+    <table>
+      <thead>
+        <tr><th>名次</th><th>暱稱</th><th>分數</th><th>時間（秒）</th></tr>
+      </thead>
+      <tbody>
+        {% for entry in leaderboard %}
+        <tr>
+          <td>{{ loop.index }}</td>
+          <td>{{ entry.nickname }}</td>
+          <td>{{ entry.score }}</td>
+          <td>{{ entry.time }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <a href="/">🔁 再測一次</a>
+  </div>
+</body>
+</html>
